@@ -1,0 +1,228 @@
+/* portsty.css */
+
+/* Root variables for colors */
+:root {
+    --black: #181818;
+    --white: #fff;
+    --ash: #e0e0e0;
+    --ash-dark: #b0b0b0;
+    --accent: #222;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: var(--accent);
+    padding: 1.5rem 0 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid var(--ash-dark);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222 url('profile.png') center/cover no-repeat;
+    float: left;
+    margin: 0 1.2rem 0 2rem;
+}
+header img {
+    display: none; /* Hide the img if using .logo as background */
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    color: var(--ash);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+
+nav a.active,
+nav a:hover,
+nav a:focus {
+    background: var(--ash);
+    color: var(--black);
+}
+
+/* Section */
+.section {
+    max-width: 700px;
+    margin: 2.5rem auto 2rem auto;
+    background: rgba(224,224,224,0.04);
+    border-radius: 12px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+}
+
+.section h2 {
+    font-size: 1.7rem;
+    color: var(--ash);
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    word-break: break-word;
+}
+
+/* Projects */
+.project {
+    background: rgba(255,255,255,0.03);
+    border-left: 4px solid var(--ash-dark);
+    margin-bottom: 1.5rem;
+    padding: 1.2rem 1.2rem 1rem 1.5rem;
+    border-radius: 8px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.project h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    word-break: break-word;
+}
+
+.project p {
+    color: var(--ash);
+    font-size: 1rem;
+}
+
+.project:hover {
+    background: rgba(224,224,224,0.08);
+    border-left: 4px solid var(--white);
+}
+
+/* Footer */
+footer {
+    background: var(--accent);
+    color: var(--ash-dark);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--ash-dark);
+    margin-top: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    word-break: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .section {
+        max-width: 95vw;
+        padding: 1.5rem 1rem;
+    }
+    .logo {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 1rem 0 0.7rem 0;
+    }
+    .section {
+        padding: 1.2rem 0.7rem;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.8rem 0 1rem;
+    }
+    nav ul {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 500px) {
+    header h1 {
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+    }
+    nav a {
+        margin: 0 0.3rem;
+        font-size: 0.95rem;
+        padding: 0.3rem 0.7rem;
+    }
+    .section {
+        padding: 0.7rem 0.2rem;
+        margin: 1.2rem 0.2rem 1rem 0.2rem;
+    }
+    .project {
+        padding: 0.7rem 0.4rem 0.6rem 0.7rem;
+    }
+    .section h2 {
+        font-size: 1rem;
+    }
+    footer {
+        font-size: 0.85rem;
+        padding: 0.7rem 0;
+    }
+    .logo {
+        width: 32px;
+        height: 32px;
+        margin: 0 0.5rem 0 0.5rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+    nav li {
+        display: block;
+    }
+}
+
+/* Ensure content is not hidden behind fixed footer */
+@media (max-width: 700px) {
+    body {
+        padding-bottom: 3.5rem;
+    }
+}
+@media (min-width: 701px) {
+    body {
+        padding-bottom: 2.5rem;
+    }
+}
